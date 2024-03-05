@@ -13,15 +13,17 @@ if hari_kerja > hari_kerja_perbulan :
     lembur = (harilembur)* 150000
     hari_kerja1 = hari_kerja
     hari_kerja1 = hari_kerja_perbulan    
+    Totalgaji= int((hari_kerja1/hari_kerja_perbulan)*gaji)
+    Totalgaji += lembur
 else :
     lembur = 0
+    Totalgaji= int((hari_kerja/hari_kerja_perbulan)*gaji)
 
-Totalgaji= int((hari_kerja1/hari_kerja_perbulan)*gaji + lembur)
 Totalgaji = f"{Totalgaji:,}"
-print("\nNama :", nama)
-print(f"Kehadiran anda : {hari_kerja} hari")
+print("\nNama:", nama)
+print(f"Kehadiran anda: {hari_kerja} hari")
 if lembur > 0:
     print(f"Anda lembur selama {harilembur} hari.")
 else :
     print("Anda tidak lembur")
-print(f"gaji yang didapatkan {nama} adalah Rp.", Totalgaji)
+print(f"gaji yang didapatkan {nama} bulan ini: Rp.", Totalgaji)
